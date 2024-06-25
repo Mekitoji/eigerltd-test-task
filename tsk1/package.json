@@ -1,0 +1,8 @@
+{
+  "name": "tsk1",
+  "main": "commonPrefix.js",
+  "scripts": {
+    "test": "node --test '*.spec.js'"
+  },
+  "type": "module"
+}

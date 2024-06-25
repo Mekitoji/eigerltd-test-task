@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.311" tests="16" failures="6">
+  <testsuite name="Root Suite" timestamp="2024-06-24T23:49:16" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="stock_trades_api_hard" timestamp="2024-06-24T23:49:16" tests="16" file="/Users/mktji/workspace/eigerltd/tsk2/test/index.spec.js" time="2.309" failures="6">
+    <testcase name="stock_trades_api_hard should create a new trade of buy type" time="2.002" classname="should create a new trade of buy type">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (/Users/mktji/workspace/eigerltd/tsk2/test/index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (/Users/mktji/workspace/eigerltd/tsk2/test/index.spec.js)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should create a new trade of sell type" time="0.023" classname="should create a new trade of sell type">
+    </testcase>
+    <testcase name="stock_trades_api_hard should return 400 if the payload has an invalid type" time="0.006" classname="should return 400 if the payload has an invalid type">
+    </testcase>
+    <testcase name="stock_trades_api_hard should return 400 if the number of shares exceeds the limit" time="0.002" classname="should return 400 if the number of shares exceeds the limit">
+    </testcase>
+    <testcase name="stock_trades_api_hard should return 400 if the number of shares is below the limit" time="0.002" classname="should return 400 if the number of shares is below the limit">
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch all the trades" time="0.036" classname="should fetch all the trades">
+      <failure message="expected [ { type: &apos;sell&apos;, …(6) }, …(3) ] to deeply equal [ { type: &apos;sell&apos;, …(5) }, …(3) ]" type="AssertionError"><![CDATA[AssertionError: expected [ { type: 'sell', …(6) }, …(3) ] to deeply equal [ { type: 'sell', …(5) }, …(3) ]
+    at Context.<anonymous> (test/index.spec.js:107:30)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+      + expected - actual
+
+       [
+         {
+      -    "id": 3
+           "price": 111
+           "shares": 12
+           "symbol": "AAC"
+           "timestamp": 1501522701000
+           "type": "sell"
+           "user_id": 25
+         }
+         {
+      -    "id": 4
+           "price": 133
+           "shares": 12
+           "symbol": "AAC"
+           "timestamp": 1511522701000
+           "type": "sell"
+           "user_id": 24
+         }
+         {
+      -    "id": 5
+           "price": 133
+           "shares": 12
+           "symbol": "AAC"
+           "timestamp": 1521522701000
+           "type": "sell"
+           "user_id": 23
+         }
+         {
+      -    "id": 6
+           "price": 134
+           "shares": 30
+           "symbol": "ABX"
+           "timestamp": 1531522701000
+      ]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch no trades if the type filter value does not exist" time="0.018" classname="should fetch no trades if the type filter value does not exist">
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch all trades for a user" time="0.018" classname="should fetch all trades for a user">
+      <failure message="expected [ { type: &apos;sell&apos;, …(6) }, …(1) ] to deeply equal [ { type: &apos;sell&apos;, …(5) }, …(1) ]" type="AssertionError"><![CDATA[AssertionError: expected [ { type: 'sell', …(6) }, …(1) ] to deeply equal [ { type: 'sell', …(5) }, …(1) ]
+    at Context.<anonymous> (test/index.spec.js:121:30)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+      + expected - actual
+
+       [
+         {
+      -    "id": 13
+           "price": 133
+           "shares": 12
+           "symbol": "AAC"
+           "timestamp": 1521522701000
+           "type": "sell"
+           "user_id": 23
+         }
+         {
+      -    "id": 14
+           "price": 134
+           "shares": 30
+           "symbol": "ABX"
+           "timestamp": 1531522701000
+      ]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch no trades if user filter value does not exist" time="0.016" classname="should fetch no trades if user filter value does not exist">
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch all buy trades for a user" time="0.015" classname="should fetch all buy trades for a user">
+      <failure message="expected [ { type: &apos;buy&apos;, user_id: 23, …(5) } ] to deeply equal [ { type: &apos;buy&apos;, user_id: 23, …(4) } ]" type="AssertionError"><![CDATA[AssertionError: expected [ { type: 'buy', user_id: 23, …(5) } ] to deeply equal [ { type: 'buy', user_id: 23, …(4) } ]
+    at Context.<anonymous> (test/index.spec.js:135:30)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+      + expected - actual
+
+       [
+         {
+      -    "id": 22
+           "price": 134
+           "shares": 30
+           "symbol": "ABX"
+           "timestamp": 1531522701000
+      ]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch all sell trades for a user" time="0.018" classname="should fetch all sell trades for a user">
+      <failure message="expected [ { type: &apos;sell&apos;, user_id: 23, …(5) } ] to deeply equal [ { type: &apos;sell&apos;, user_id: 23, …(4) } ]" type="AssertionError"><![CDATA[AssertionError: expected [ { type: 'sell', user_id: 23, …(5) } ] to deeply equal [ { type: 'sell', user_id: 23, …(4) } ]
+    at Context.<anonymous> (test/index.spec.js:142:30)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+      + expected - actual
+
+       [
+         {
+      -    "id": 25
+           "price": 133
+           "shares": 12
+           "symbol": "AAC"
+           "timestamp": 1521522701000
+      ]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should fetch a single trade" time="0.016" classname="should fetch a single trade">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 500" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 500
+    at Context.<anonymous> (test/index.spec.js:148:30)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+      + expected - actual
+
+      -500
+      +200
+      ]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard should get 404 if the trade ID does not exist" time="0.002" classname="should get 404 if the trade ID does not exist">
+    </testcase>
+    <testcase name="stock_trades_api_hard should get 405 for a put request to /trades/:id" time="0.005" classname="should get 405 for a put request to /trades/:id">
+    </testcase>
+    <testcase name="stock_trades_api_hard should get 405 for a patch request to /trades/:id" time="0.006" classname="should get 405 for a patch request to /trades/:id">
+    </testcase>
+    <testcase name="stock_trades_api_hard should get 405 for a delete request to /trades/:id" time="0.005" classname="should get 405 for a delete request to /trades/:id">
+    </testcase>
+  </testsuite>
+</testsuites>
